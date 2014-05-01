@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="simpleCalculator">
+<head>
+  <meta content="charset=utf-8">
+  <title>Simple Calculator App</title>
+  <script src="lib/angular/angular.min.js" type="text/javascript"></script>
+  <script src="js/app.js" type="text/javascript"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,100' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/app.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <section ng-controller="CalcController">
+    <div class="simple-calculator">
+      <div class="output">{{ output }}</div>
+      <btn class="btn btn-warning clear" ng-click="clearClick()">{{ clear }}</btn>
+      <div class="digit-buttons">
+        <btn class="btn btn-default digit" ng-repeat="digit in digits" ng-click="digitClick(digit)">{{ digit }}</btn>
+      </div>
+      <div class="operator-buttons">
+        <btn class="btn btn-primary operator" ng-repeat="operator in operators" ng-click="operatorClick(operator)">{{ operator }}</btn>
+      </div>
+      <btn class="btn btn-success equals" ng-click="equalsClick()">{{ equalsSign }}</btn>
+    </div>
+  </section>
+</body>
+</html>
