@@ -1,11 +1,22 @@
 /* app css stylesheet */
-
+@font-face {
+  font-family: 'latoregular';
+  src: url('lato-reg-webfont.eot');
+  src: url('lato-reg-webfont.eot?#iefix') format('embedded-opentype'),
+       url('lato-reg-webfont.woff') format('woff'),
+       url('lato-reg-webfont.ttf') format('truetype'),
+       url('lato-reg-webfont.svg#latoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'latoregular';
+}
 .simple-calculator {
   background-color: #F9F9F9;
   width: 309px;
   margin: 45px auto;
   padding: 7px;
-  font-family: 'Lato', sans-serif;
   border: 1px solid #ccc;
   overflow: auto;
 }
@@ -16,12 +27,11 @@
   border: 1px solid #D7DFE0;
   border-radius: 4px;
   font-size: 60px;
-  font-weight: 300;
   line-height: 74px;
   text-align: right;
   overflow: hidden;
   padding: 2px 4px;
-  color: #555;
+  color: #777;
 }
 .simple-calculator .btn,
 .simple-calculator .btn:hover {
@@ -29,8 +39,7 @@
   text-align: center;
   margin: 4px 4px 0 0;
   padding: 8px 0;
-  color: #555;
-  font-weight: 300;
+  color: #777;
   font-size: 25px;
 }
 .digit-buttons {
@@ -43,7 +52,7 @@
 .operator-buttons {
   width: 60px;
   display: inline-block;
-  margin-left: -2px;
+  margin-left: -4px;
 }
 .operator-buttons .btn,
 .operator-buttons .btn:hover,
