@@ -16,23 +16,21 @@
   border: 1px solid #D7DFE0;
   border-radius: 4px;
   font-size: 60px;
-  line-height: 74px;
   font-weight: 100;
-  overflow: hidden;
+  line-height: 74px;
   text-align: right;
+  overflow: hidden;
   padding: 2px 4px;
   color: #555;
 }
 .simple-calculator .btn,
 .simple-calculator .btn:hover {
-  padding: 0;
   width: 70px;
   text-align: center;
   margin: 4px 4px 0 0;
+  padding: 8px 0;
   color: #555;
   font-weight: 300;
-  vertical-align: middle;
-  padding: 8px 0;
   font-size: 25px;
 }
 .digit-buttons {

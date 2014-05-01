@@ -2,8 +2,7 @@
 var app = angular.module("simpleCalculator", []);
 
 app.controller("CalcController", function($scope) {
-
-  $scope.equalsSign = "=";
+  $scope.equals = "=";
   $scope.clear = "C";
   $scope.clearDisplay = true;
   $scope.output = "0";
