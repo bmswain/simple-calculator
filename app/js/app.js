@@ -54,3 +54,4 @@ app.controller("CalcController", function($scope) {
     return string * 1;
   }
 });
+
