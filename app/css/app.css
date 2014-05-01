@@ -12,15 +12,15 @@
 .output {
   width: 100%;
   height: 90px;
-  background-color: #D7EFF2;
-  border: 3px solid #CCE2E5;
+  background-color: #F4FDFF;
+  border: 1px solid #D7DFE0;
   border-radius: 4px;
   font-size: 60px;
   line-height: 74px;
   font-weight: 100;
   overflow: hidden;
   text-align: right;
-  padding: 2px;
+  padding: 2px 4px;
   color: #555;
 }
 .simple-calculator .btn,
@@ -50,9 +50,7 @@
 .operator-buttons .btn,
 .operator-buttons .btn:hover,
 .equals.btn,
-.equals.btn:hover,
-.clear.btn,
-.clear.btn:hover  {
+.equals.btn:hover {
   color: #FFF;
   margin-right: 0px;
 }
@@ -61,6 +59,7 @@
 .clear.btn,
 .clear.btn:hover {
   width: 100%;
+  margin-right: 0px;
 }
 
 

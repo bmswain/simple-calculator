@@ -11,6 +11,12 @@ app.controller("CalcController", function($scope) {
   $scope.tempNumberB = 0;
   $scope.digits = ["7","8","9","4","5","6","1","2","3","0"];
   $scope.operators = ["/","*","-","+"];
+  $scope.operations = {
+    "/": function (a,b) { return a / b },
+    "*": function (a,b) { return a * b },
+    "-": function (a,b) { return a - b },
+    "+": function (a,b) { return a + b }
+  };
 
   $scope.clearClick = function () {
     $scope.clearDisplay = true;
@@ -38,7 +44,8 @@ app.controller("CalcController", function($scope) {
 
   $scope.equalsClick = function () {
     if($scope.currentOperator !== null) {
-      $scope.output = eval($scope.tempNumberA + $scope.currentOperator + $scope.tempNumberB);
+      var operation = $scope.operations[$scope.currentOperator];
+      $scope.output = operation($scope.tempNumberA, $scope.tempNumberB);
       $scope.clearDisplay = true;
       $scope.tempNumberA = $scope.output;
     }
