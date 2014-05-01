@@ -1,13 +1,12 @@
 
-var app = angular.module("simpleCalculator", []);
-
-app.controller("CalcController", function($scope) {
+angular.module("simpleCalculator", [])
+.controller("CalcController", function($scope) {
   $scope.equals = "=";
   $scope.clear = "C";
-  $scope.clearDisplay = true;
+  $scope.clearOutput = true;
   $scope.output = "0";
-  $scope.tempNumberA = 0;
-  $scope.tempNumberB = 0;
+  $scope.operandA = 0;
+  $scope.operandB = 0;
   $scope.digits = ["7","8","9","4","5","6","1","2","3","0"];
   $scope.operators = ["/","*","-","+"];
   $scope.operations = {
@@ -18,35 +17,35 @@ app.controller("CalcController", function($scope) {
   };
 
   $scope.clearClick = function () {
-    $scope.clearDisplay = true;
+    $scope.clearOutput = true;
     $scope.output = "0";
-    $scope.tempNumberA = 0;
-    $scope.tempNumberB = 0;
-    $scope.currentOperator = null;
+    $scope.operandA = 0;
+    $scope.operandB = 0;
+    $scope.operator = null;
   };
 
   $scope.digitClick = function (digit) {
-    if ($scope.clearDisplay) {
+    if ($scope.clearOutput) {
         $scope.output = digit;
-        $scope.clearDisplay = false;
+        $scope.clearOutput = false;
     } else {
-        $scope.output += String(digit);
+        $scope.output += digit;
     }
-    $scope.tempNumberB = convertToNumber($scope.output);
+    $scope.operandB = convertToNumber($scope.output);
   };
 
   $scope.operatorClick = function (operator) {
-    $scope.currentOperator = operator;
-    $scope.tempNumberA = convertToNumber($scope.output);
-    $scope.clearDisplay = true;
+    $scope.operator = operator;
+    $scope.operandA = convertToNumber($scope.output);
+    $scope.clearOutput = true;
   };
 
   $scope.equalsClick = function () {
-    if($scope.currentOperator !== null) {
-      var operation = $scope.operations[$scope.currentOperator];
-      $scope.output = operation($scope.tempNumberA, $scope.tempNumberB);
-      $scope.clearDisplay = true;
-      $scope.tempNumberA = $scope.output;
+    if($scope.operator !== null) {
+      var operation = $scope.operations[$scope.operator];
+      $scope.output = operation($scope.operandA, $scope.operandB);
+      $scope.clearOutput = true;
+      $scope.operandA = $scope.output;
     }
   };
 
